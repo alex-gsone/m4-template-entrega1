@@ -12,4 +12,6 @@ interface HandleProducts{
     getProducts():;
 
     getOneProduct(id: number): Product;
+
+    updateProduct():;
 }
