@@ -1,4 +1,4 @@
-interface Product{
+export interface Product{
     id: number,
     name: Text,
     price: number,
@@ -6,12 +6,16 @@ interface Product{
     updatedAt: Date
 };
 
-interface HandleProducts{
-    createProduct(data: { name: Text; price: number}): Product;
+export interface HandleProducts{
+    createProduct(data: { name: string; price: number}): Product;
 
-    getProducts():;
+    getProducts():Product[];
 
-    getOneProduct(id: number): Product;
+    getOneProduct(id: number): Product | undefined;
 
-    updateProduct():;
+    updateProduct(id: number, data: {name?:string; price?: number}): Product;
+
+    deleteProduct(id: number): {mensagem:string};
+
 }
+
